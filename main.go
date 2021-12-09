@@ -1,12 +1,13 @@
 package main
 
 import (
-	"math/rand"
 	"encoding/json"
 	"fmt"
 	"log"
-	"strconv"
+	"math/rand"
 	"net/http"
+	"strconv"
+
 	"github.com/gorilla/mux"
 )
 
@@ -102,8 +103,10 @@ func updateMovie(w http.ResponseWriter , r *http.Request) {
 func main() {
 	firstMovie := Movie{Id : "1" , Isbn: "b45" , Title :"The story of my Life" , Director: &Director{FirstName: "Dev" , LastName: "Prakash"}}
 	secondMovie := Movie{Id : "2" , Isbn : "c64", Title: "Logan" , Director: &Director{FirstName : "James" , LastName: "Mangold" }}
+	thirdMovie := Movie{Id : "3" , Isbn : "634" , Title : "Contact" ,Director: &Director{FirstName: "James" , LastName: "Cameron"}}
 	movies = append(movies , firstMovie)
 	movies = append(movies , secondMovie)
+	movies = append(movies , thirdMovie)
 
 
 	r := mux.NewRouter() // creates an instance of the router
